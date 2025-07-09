@@ -5,7 +5,7 @@
 public class DynamicArray {
 
     private static final int DEFAULT_SIZE = 4;
-    private static final int RESIZE_FACTOR = 2;
+    
 
     /** The underlying array of the data structure */
     private String[] underlying;
