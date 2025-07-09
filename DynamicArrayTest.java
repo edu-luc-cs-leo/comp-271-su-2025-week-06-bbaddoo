@@ -14,6 +14,9 @@ class DynamicArrayTest {
         testRemoveByValue();
         testToStringEmpty();
         testToStringNonEmpty();
+        testQueueToString();
+        testQueuePeek();
+        testQueueAddAndPop();
         System.out.println("All tests finished.");
     }
 
@@ -105,4 +108,29 @@ class DynamicArrayTest {
         assertTrue("ToString contains world", str.contains("world"));
         assertTrue("ToString has occupancy info", str.contains("occupancy"));
     }
+}
+    static void testQueueAddAndPop() {
+        Queue q = new Queue();
+        q.add("a");
+        q.add("b");
+        q.add("c");
+        assertEquals("Queue pop returns 'a'", "a", q.pop());
+        assertEquals("Queue pop returns 'b'", "b", q.pop());
+}
+
+    static void testQueuePeek() {
+        Queue q = new Queue();
+        q.add("x");
+        q.add("y");
+        assertEquals("Queue peek returns 'x'", "x", q.peek());
+        assertEquals("Queue pop after peek returns 'x'", "x", q.pop());
+}
+
+    static void testQueueToString() {
+        Queue q = new Queue();
+         q.add("1");
+         q.add("2");
+         String output = q.toString();
+         assertTrue("Queue toString contains '1'", output.contains("1"));
+         assertTrue("Queue toString contains '2'", output.contains("2"));
 }
